@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
+import menu from "../assets/menu.svg";
+import cancelMenu from "../assets/cancel menu.svg";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../UserComponent/userSlice";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const handleMenuOpen = () => {
+  // const handleMenuOpen = () => { //this works fine in opening and closing of the nav bar menu
+  //   setMenuOpen(!menuOpen);
+  // };
+  const [menuIcon, setMenuIcon] = useState(menu);
+  const menuChange = () => {
+    //this work well in changing the menu to  cancel menu and also to open and close the nav bar
+    setMenuIcon(menuIcon === menu ? cancelMenu : menu);
+
     setMenuOpen(!menuOpen);
   };
 
@@ -24,13 +31,18 @@ const Header = () => {
         ) : (
           <div className=" italic">
             <h2>hello user</h2>
-            <h2 className="font-thin">Please log in or sign up to continue</h2>
+            <h2 className="font-thin text-sm">
+              Please log in or sign up to continue
+            </h2>
           </div>
         )}
       </div>
 
-      <div className="block md:hidden border absolute right-2 top-6">
-        <svg
+      <div
+        // onClick={handleMenuOpen}
+        className="block md:hidden  absolute right-2 top-6"
+      >
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="16"
@@ -41,7 +53,8 @@ const Header = () => {
           <rect width="30" height="1.5"></rect>
           <rect y="7" width="20" height="1.5"></rect>
           <rect y="14" width="30" height="1.5"></rect>
-        </svg>
+        </svg> */}
+        <img src={menuIcon} alt="menu" onClick={menuChange} />
       </div>
 
       <div
@@ -50,7 +63,7 @@ const Header = () => {
         }`}
       >
         <nav>
-          <div className="list-none block md:flex gap-6 items-center capitalize  ">
+          <div className="list-none block md:flex gap-6 items-center capitalize bg-[#e5eeee]  ">
             <li className="py-2 md:py-0">
               <Link to="/">Home</Link>
             </li>
