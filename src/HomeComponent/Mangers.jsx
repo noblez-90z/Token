@@ -41,7 +41,7 @@ const Manager = () => {
 
   return (
     <div className="rating-wrapper  my-4 px-5">
-      <h2 className="font-semibold text-xl py-3 my-2 text-center">
+      <h2 className="font-bold text-[24px] md:text-[36px] py-3 my-2 text-center">
         We’ve got a lot of people who trust us, so you are in excellent hands.
       </h2>
 
@@ -56,8 +56,8 @@ const Manager = () => {
             <div className="rating-star py-2">
               <img src={detial.image} alt="" />
             </div>
-            <div className="rating-text py-2 my-5">
-              <p>{detial.text} </p>
+            <div className="rating-text py-2 my-5 capitalize">
+              <p className="text-[14px]">{detial.text} </p>
             </div>
             <div className="manager-profile flex justify-center items-center gap-3 py-2">
               <img
@@ -65,9 +65,9 @@ const Manager = () => {
                 alt=""
                 className="w-[50px] h-[50px] rounded-full"
               />
-              <div className="manager-profile-info">
-                <h5> {detial.name}</h5>
-                <p>{detial.position}</p>
+              <div className="manager-profile-info capitalize">
+                <h5 className="text-[16px] font-bold "> {detial.name}</h5>
+                <p className="text-[#055555]">{detial.position}</p>
               </div>
             </div>
           </div>

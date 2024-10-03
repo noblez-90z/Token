@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="bg-[#1f2937] text-white py-4 px-4">
       <div className="footer-wrapper block md:flex justify-around ">
         <div className="info md:w-[250px]">
-          <p className="py-3">
+          <p className="py-3 text-[14px]">
             Providing a reliable booking service for sports and education
             trainers, and their customers
           </p>
@@ -25,8 +25,8 @@ const Footer = () => {
             <FontAwesomeIcon icon={faLinkedin} />
           </div>
         </div>
-        <div className="company-wrapper  mt-3 md:mt-0">
-          <h3 className="py-2 font-bold text-xl">Company</h3>
+        <div className="company-wrapper  mt-3 md:mt-0 text-[14px]">
+          <h3 className="py-2 font-bold ">Company</h3>
           <ul>
             <li className="py-2">
               <Link to="/">Privacy Policy</Link>
@@ -39,8 +39,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="resource-wrapper  mt-3 md:mt-0">
-          <h3 className="py-2 font-bold text-xl">Resources</h3>
+        <div className="resource-wrapper  mt-3 md:mt-0 text-[14px]">
+          <h3 className="py-2 font-bold ">Resources</h3>
           <ul>
             <li className="py-2">
               <Link to="/">Help Centers</Link>
@@ -50,8 +50,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="help-wrapper mt-3 md:mt-0">
-          <h3 className="py-2 font-bold text-xl">Help & Support</h3>
+        <div className="help-wrapper mt-3 md:mt-0 text-[14px]">
+          <h3 className="py-2 font-bold ">Help & Support</h3>
           <ul>
             <li className="py-2 font-semibold">
               <Link to="/Contact">Contact us</Link>
@@ -69,7 +69,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p className="py-3 text-center mt-3">
+      <p className="py-3 text-center mt-3 text-[14px]">
         &copy; 2024 TokenSite. All rights reserved.
       </p>
     </footer>

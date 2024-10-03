@@ -15,6 +15,7 @@ const LoginForm = () => {
     dispatch(login({ email, password }));
     if (!isAuthenticated) {
       alert("Login failed! Please check your credentials.");
+    } else {
       navigate("/");
     }
   };
@@ -42,8 +43,13 @@ const LoginForm = () => {
               className="border-2 w-full rounded-md px-2 py-2 outline-none"
             />
           </div>
+          <p className="py-2 text-right font-bold text-[#005555]">
+            <Link to="/PasswordReset" className="capitalize">
+              forgot password?
+            </Link>
+          </p>
           <button
-            className="bg-[#025951] text-white block px-3 py-2 mx-auto w-[50%] my-6 rounded-full font-bold"
+            className="bg-[#025951] text-white block px-3 py-2 mx-auto  w-full md:w-[60%] my-6 rounded-lg font-bold"
             onClick={handleLogin}
           >
             Login

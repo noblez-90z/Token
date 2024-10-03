@@ -16,7 +16,7 @@ const SignUpForm = () => {
     const newUser = { name, surname, email, password };
     dispatch(signUp(newUser)); // Dispatch sign-up action with user details
     alert("Sign-up successful! You can now log in.");
-    navigate("/Login");
+    navigate("/EmailVerfication");
   };
 
   return (
@@ -61,7 +61,7 @@ const SignUpForm = () => {
             />
           </div>
           <button
-            className="bg-[#025951] text-white block px-3 py-2 mx-auto my-6 w-[50%]  rounded-full font-bold"
+            className="bg-[#025951] text-white block px-3 py-2 mx-auto my-6 w-full md:w-[60%]  rounded-lg font-bold"
             onClick={handleSignUp}
           >
             Sign Up

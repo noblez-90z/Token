@@ -22,7 +22,7 @@ const Header = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
   return (
-    <div className="shadow-md bg-[#e5eeee] relative h-[80px] px-2 w-full  flex items-center justify-between capitalize font-bold text-xl">
+    <div className="border-b border-[#055555] bg-[#e5eeee]  relative h-[80px] px-2 w-full  flex items-center justify-between capitalize font-bold text-xl">
       <div>
         {isAuthenticated ? (
           <h2 className="italic">
@@ -58,12 +58,12 @@ const Header = () => {
       </div>
 
       <div
-        className={`absolute top-24 right-0 md:top-2 md:h-[50px] md:right-2  px-2 w-full md:w-fit block md:flex items-center ${
+        className={`absolute top-[80px] right-0 md:top-2 md:h-[50px] md:right-2   w-full md:w-fit block md:flex items-center ${
           menuOpen ? "block" : "hidden"
         }`}
       >
         <nav>
-          <div className="list-none block md:flex gap-6 items-center capitalize bg-[#e5eeee]  ">
+          <div className="list-none block md:flex gap-6 items-center w-full px-2 py-6 capitalize bg-[#e5eeee]  ">
             <li className="py-2 md:py-0">
               <Link to="/">Home</Link>
             </li>
@@ -97,9 +97,17 @@ const Header = () => {
             )}
           </div>
         </nav>
+        {menuOpen && (
+          <div
+            onClick={menuChange}
+            className={`fixed   right-0 h-svh w-full insect-0 bg-black bg-opacity-20 z-50`}
+          ></div>
+        )}
       </div>
     </div>
   );
 };
 
 export default Header;
+
+// "h-svh  bg-black md:bg-none bg-opacity-75 md:opacity-0  transform transition-transform duration-300 ease-in-out

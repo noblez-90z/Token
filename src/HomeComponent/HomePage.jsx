@@ -9,7 +9,7 @@ import HeroTwo from "./HeroTwo";
 const HomePage = () => {
   return (
     <Layout>
-      <div className=" ">
+      <div className="overflow-hidden ">
         <Hero />
         <HeroTwo />
       </div>

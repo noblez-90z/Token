@@ -24,23 +24,23 @@ const VideoLearning = () => {
   }, [videos.length]);
   return (
     <div className="main-wrapper">
-      <div className="video-wrap block md:flex justify-between gap-8 mt-5">
+      <div className="video-wrap block md:flex justify-center gap-3 my-8 py-5 px-6">
         {videos.map((video, index) => (
           <div
             key={index}
-            className={`video relative  ${
+            className={`video relative  md:w-[70%]   ${
               index === currentIndex ? "active" : ""
             }`}
           >
-            <img src={video.image} alt="" className="mt-3" />
-            <p className="absolute top-1 left-1 py-2 text-white">
+            <img src={video.image} alt="" className="mt-3 w-full " />
+            <p className="absolute top-2 left-2 py-2 text-white">
               {video.text}{" "}
             </p>
-            <h3 className="absolute top-24 md:top-40 left-24 md:left-44  font-semibold text-xl text-white">
+            <h3 className="absolute top-24 md:top-40 w-fit  left-0 right-0 mx-auto  font-bold text-[24px] text-white">
               {video.header}{" "}
             </h3>
             <button
-              className={` btn py-2 absolute px-3 w-[70%] top-32 md:top-48 left-10  rounded-lg bg-[#025951] text-white `}
+              className={` btn py-2 absolute my-3 px-3 w-fit left-0 right-0 mx-auto top-32 md:top-48  rounded-lg bg-[#025951] text-white `}
             >
               {video.btn}{" "}
             </button>

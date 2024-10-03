@@ -11,6 +11,8 @@ import Profile from "./DashBoardComponent/Profile";
 import Security from "./DashBoardComponent/Security";
 import Support from "./DashBoardComponent/Support";
 import About from "./HomeComponent/About";
+import PasswordReset from "./HomeComponent/PasswordReset";
+import EmailVerfication from "./HomeComponent/EmailVerfication";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/Security" element={<Security />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/About" element={<About />} />
+          <Route path="/PasswordReset" element={<PasswordReset />} />
+          <Route path="/EmailVerfication" element={<EmailVerfication />} />
         </Routes>
       </Router>
     </>
