@@ -27,7 +27,16 @@ const Hero = () => {
       text: " On Myt.page, you should be sure to find options that will meet your schedule and session needs.",
     },
   ];
-  const { isAuthenticated, user } = useSelector((state) => state.user);
+
+  // const userState = useSelector((state) => state.user);
+
+  // if (!userState) {
+  //   return <p>Loading...</p>;
+  // }
+
+  // const { isAuthenticated, user } = userState;
+  const { isAuthenticated, user } = useSelector((state) => state.newUser);
+  // if ()
   return (
     <div className="">
       <div className="bg-[#e6efef] text-white h-screen block md:flex items-center justify-center">
@@ -42,13 +51,17 @@ const Hero = () => {
           </p>
 
           {isAuthenticated ? (
-            <p className="bg-[#025951] text-[16px] font-medium text-center  text-white capitalize  w-fit  px-8 py-3 rounded-lg">
-              <Link to="/DashBoard">explore</Link>
-            </p>
+            <div className="">
+              <p className="bg-[#025951] text-[16px] font-medium text-center  text-white capitalize  w-fit  px-8 py-3 rounded-lg">
+                <Link to="/DashBoard">explore</Link>
+              </p>
+            </div>
           ) : (
-            <p className="bg-[#025951] text-[16px] font-medium text-center text-white capitalize  w-fit px-8 py-3 rounded-lg">
-              <Link to="/signUp">Get Started</Link>
-            </p>
+            <div className="">
+              <p className="bg-[#025951] text-[16px] font-medium text-center text-white capitalize  w-fit px-8 py-3 rounded-lg">
+                <Link to="/signUp">Get Started</Link>
+              </p>
+            </div>
           )}
         </div>
         <div className=" hero-pic mt-16 md:mt-0 flex-1 px-6  ">

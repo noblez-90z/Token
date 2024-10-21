@@ -3,7 +3,8 @@ import menu from "../assets/menu.svg";
 import cancelMenu from "../assets/cancel menu.svg";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../UserComponent/userSlice";
+// import { logout } from "../UserComponent/userSlice";
+import { logout } from "../NewUserComponent/userSlice";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,18 +20,22 @@ const Header = () => {
   };
 
   const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector((state) => state.user);
+
+  const { isAuthenticated, user } = useSelector((state) => state.newUser);
 
   return (
     <div className="border-b border-[#055555] bg-[#e5eeee]  relative h-[80px] px-2 w-full  flex items-center justify-between capitalize font-bold text-xl">
       <div>
         {isAuthenticated ? (
-          <h2 className="italic">
-            Welcome, {user.name} {user.surname}
-          </h2>
+          <div className=" italic">
+            <h2 className="italic">
+              {/* Welcome, {user.name} {user.surname} */}
+              Welcome, {user?.username || "userman"}
+            </h2>
+          </div>
         ) : (
           <div className=" italic">
-            <h2>hello user</h2>
+            <h2>hello user!</h2>
             <h2 className="font-thin text-sm">
               Please log in or sign up to continue
             </h2>
@@ -40,7 +45,7 @@ const Header = () => {
 
       <div
         // onClick={handleMenuOpen}
-        className="block md:hidden  absolute right-2 top-6"
+        className="block md:hidden  absolute right-2 top-6 cursor-pointer"
       >
         {/* <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,12 +63,12 @@ const Header = () => {
       </div>
 
       <div
-        className={`absolute top-[80px] right-0 md:top-2 md:h-[50px] md:right-2   w-full md:w-fit block md:flex items-center ${
+        className={`absolute top-[80px] right-0 md:top-2  md:h-[50px] md:right-2   w-full md:w-fit block md:flex items-center ${
           menuOpen ? "block" : "hidden"
         }`}
       >
         <nav>
-          <div className="list-none block md:flex gap-6 items-center w-full px-2 py-6 capitalize bg-[#e5eeee]  ">
+          <div className="list-none block md:flex gap-6 h-[350px] items-center w-full px-2 md:h-[70px]  md:py-6 capitalize bg-[#e5eeee]  ">
             <li className="py-2 md:py-0">
               <Link to="/">Home</Link>
             </li>
@@ -79,7 +84,7 @@ const Header = () => {
                   <Link to="/DashBoard">Dashboard</Link>
                 </li>
                 <li
-                  className="py-2 md:py-3 px-6 my-3 bg-[#025951] text-white font-semibold rounded-lg"
+                  className="py-2 md:py-3 px-6 my-4 md:my-0 bg-[#025951] text-white font-semibold rounded-lg"
                   onClick={() => dispatch(logout())}
                 >
                   Logout
@@ -90,7 +95,7 @@ const Header = () => {
                 <li className="py-2 md:py-0 font-semibold">
                   <Link to="/Login">Login</Link>
                 </li>
-                <li className=" py-2 px-6 md:py-2  my-3 font-semibold bg-[#025951] text-white rounded-lg">
+                <li className=" py-2 px-6 md:py-2  my-4 md:my-0 font-semibold bg-[#025951] text-white rounded-lg">
                   <Link to="/signUp">Sign Up</Link>
                 </li>
               </div>
